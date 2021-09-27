@@ -5,7 +5,7 @@ import {
 } from '@angular/material/snack-bar';
 
 @Component({
-    selector: 'snack-bar-component-example-snack',
+    selector: 'snack-bar-component',
     template: `
     <div class="snack-wrapper"> 
         <span>

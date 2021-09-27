@@ -1,3 +1,9 @@
+# CarRegistry - Note from the developer
+
+This project was developed with the intention of showing my skills with Angular, Typescript, SASS and the other present technologies. Worth mention that since this app serves as showcase of my skills some approaches are done manually instead of using third-party packages so I can better show what I can do without shortcuts.
+It consists in a app thar allows the user to register a car using Angular Reactive Forms, store it in the application using NGRX and keep the data in the Local Storage of the browser so when the user closes the app and open again the information will remain until the local storage is cleared. When a new record is added the app gives the user the possibility of seeing this fresh record filtered in a grid list. In this list it's possible to see all the records and also filter then by any substring present in any property of the data. It's also possible to toggle between the 'Basic' and the 'Extended' view of the grid table, as well as the amount of lines shown by the paginator.
+The evaluator will also find unit tests for the main components.
+
 # CarRegistry
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.1.
