@@ -1,0 +1,17 @@
+<div class="page">
+
+  <div class="view-selector">
+    <mat-form-field appearance="outline">
+      <mat-label>Area</mat-label>
+      <mat-select [(value)]="selectedArea" disableRipple>
+        <mat-option *ngFor="let area of areaOptions" [value]="area">{{area}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="content">
+    <app-add-car id="add-car" *ngIf="selectedArea === 'Add'" (reviewFreshCar)="findFreshCar($event)"></app-add-car>
+    <app-car-registry id="car-registry" [startingFilter]="startingFilter" (changeArea)="changeArea($event)" *ngIf="selectedArea === 'Registry'"></app-car-registry>
+  </div>
+
+</div>

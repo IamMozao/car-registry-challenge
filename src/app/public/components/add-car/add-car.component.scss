@@ -1,0 +1,20 @@
+form {
+  max-width: 60%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: flex-start;
+
+  .mat-form-field {
+    margin: 0.2rem 1rem;
+  }
+
+  .type {
+    width: 100%;
+
+    .mat-form-field {
+      width: calc(100% - 2rem);
+    }
+  }
+
+}

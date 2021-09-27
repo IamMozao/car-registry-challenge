@@ -1,0 +1,40 @@
+@import "~/src/scss/colors";
+
+.registry-container {
+  width: 80%;
+
+  .view-controllers {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: .5rem;
+    border-bottom: 1px solid #efefef;
+
+    .search {
+      .mat-form-field {
+        width: 200px;
+        margin-left: 1rem;
+
+      }
+    }
+  }
+
+
+  .cars-list-title {
+    background-color: $primary;
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: 1px;
+  }
+
+  .cars-list {
+
+    &:nth-child(odd) {
+      background-color: #fff;
+    }
+
+    &:nth-child(even) {
+      background-color: #f3f3f3;
+    }
+  }
+}

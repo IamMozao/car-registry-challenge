@@ -1,0 +1,66 @@
+<div class="page-wrapper">
+  <div class="title-wrapper">
+    <h1 class="title"> Add a New Car </h1>
+  </div>
+  <form [formGroup]="carForm" (ngSubmit)="onSubmit()" class="example-form">
+
+    <div class="form-row type">
+      <mat-form-field appearance="outline">
+        <mat-label>Type</mat-label>
+        <mat-select matInput formControlName="carType">
+          <mat-option [value]="carType" *ngFor="let carType of carTypes"> {{carType}} </mat-option>
+        </mat-select>
+        <mat-error *ngIf="carForm.get('carType').hasError('required')">
+          Car type is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form-row">
+      <mat-form-field appearance="outline">
+        <mat-label>Model</mat-label>
+        <input matInput formControlName="model" type="text" autocomplete="off">
+        <mat-error *ngIf="carForm.get('model').hasError('required')">
+          Model is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Color</mat-label>
+        <mat-select matInput formControlName="color">
+          <mat-option [value]="color" *ngFor="let color of availableColors"> {{color}} </mat-option>
+        </mat-select>
+        <mat-error *ngIf="carForm.get('color').hasError('required')">
+          Car Color is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="form-row">
+      <mat-form-field appearance="outline">
+        <mat-label>License number</mat-label>
+        <input matInput formControlName="license" type="number" autocomplete="off">
+        <mat-error *ngIf="carForm.get('license').hasError('required')">
+          License is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Owner</mat-label>
+        <input matInput formControlName="owner" type="text" autocomplete="off">
+      </mat-form-field>
+    </div>
+    <div class="form-row">
+
+      <mat-form-field appearance="outline" *ngIf="carForm.get('capacity')">
+        <mat-label>Capacity</mat-label>
+        <input matInput formControlName="capacity" type="number" autocomplete="off">
+        <mat-error *ngIf="carForm.get('capacity').hasError('required')">
+          Capacity is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <button [disabled]="!carForm.valid" mat-flat-button color="primary" type="submit">Save car</button>
+
+  </form>
+</div>
