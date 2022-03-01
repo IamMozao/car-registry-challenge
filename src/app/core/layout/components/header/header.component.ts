@@ -3,7 +3,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 @Component({
   selector: 'app-header',
   template: `
-    <header>
+  <header>
     <mat-toolbar color="primary">
       <div class="title">
         <mat-icon>directions_car</mat-icon>

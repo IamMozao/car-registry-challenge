@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-simple-layout',
-  templateUrl: './simple-layout.component.html',
-  styleUrls: ['./simple-layout.component.scss']
+  template: `
+    <app-header></app-header>
+    <router-outlet></router-outlet>`,
 })
 export class SimpleLayoutComponent implements OnInit {
 

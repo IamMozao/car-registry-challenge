@@ -1,26 +1,27 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
-import { Car } from '@shared/types/car.types';
+import { Component, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-car-management',
   templateUrl: './car-management.component.html',
-  styleUrls: ['./car-management.component.scss']
+  styleUrls: ['./car-management.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CarManagementComponent {
   areaOptions = ["Add", "Registry"];
-  selectedArea = "Add";
+  selectedArea: string;
   startingFilter: number;
 
-  constructor(private cd: ChangeDetectorRef) { }
+  constructor(private cd: ChangeDetectorRef) {
+    this.selectedArea = "Add";
+   }
 
   findFreshCar(freshCarLicense: number): void {
-    this.changeArea("Registry");
     this.startingFilter = freshCarLicense;
+    this.changeArea("Registry");
   }
 
-  changeArea(area) {
-    this.selectedArea = area;
+  changeArea(area: string) {    
+    this.selectedArea = area;    
     this.cd.detectChanges();
   }
 

@@ -11,7 +11,7 @@
 
   <div class="content">
     <app-add-car id="add-car" *ngIf="selectedArea === 'Add'" (reviewFreshCar)="findFreshCar($event)"></app-add-car>
-    <app-car-registry id="car-registry" [startingFilter]="startingFilter" (changeArea)="changeArea($event)" *ngIf="selectedArea === 'Registry'"></app-car-registry>
+    <app-car-registry id="car-registry" *ngIf="selectedArea === 'Registry'" [startingFilter]="startingFilter" (changeArea)="changeArea($event)"></app-car-registry>
   </div>
 
 </div>

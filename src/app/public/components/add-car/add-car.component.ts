@@ -27,10 +27,10 @@ export class AddCarComponent implements OnInit, OnDestroy {
     private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
-    this.initReminderForm();
+    this.initCarForm();
   }
 
-  initReminderForm() {
+  initCarForm() {
     let initialValues: Car = {
       carType: null,
       model: null,
@@ -66,7 +66,6 @@ export class AddCarComponent implements OnInit, OnDestroy {
     this.store.dispatch(addCar({ car: values }));
     this.openSnackBar(`${values.carType} registred succesfully!`)
   }
-
 
   openSnackBar(message: string) {
     const configSuccess: MatSnackBarConfig = {
